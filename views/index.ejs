@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Cereal API </h1>
+    <form action="/cereals" method="POST">
+            <input type="text" placeholder="Cereal Name" name="name">
+            <input type="text" placeholder="Brand" name="brand">
+            <input type="text" placeholder="Production Years" name="lifetime">
+            <input type="text" placeholder="Fiber Content" name="fiber">
+            <input type="text" placeholder="Sugar Content" name="sugar">
+            <button type="submit">Submit</button>
+    </form>
+    <h2>Cereals</h2>
+    <ul class="cereals">
+        <% for(let i =0; i < cereals.length; i++) {%>
+            <li class="cereal">
+                <span><%= cereals[i].name %></span>:
+                <span><%= cereals[i].brand %></span>
+                <span><%= cereals[i].lifetime %></span>
+                <span><%= cereals[i].fiber %></span>
+                <span><%= cereals[i].sugar %></span>
+                <button class="deleteButton">Delete</button>
+            </li>
+            <% } %>
+    </ul>
+    <section id="message"></section>
+    <script src="/main.js"></script>
+</body>
+</html>
